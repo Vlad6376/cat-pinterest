@@ -1,0 +1,126 @@
+.navbar {
+  background-color: rgb(53, 56, 250);
+  color: white;
+  display: flex;
+  justify-content: flex-start;  
+  align-items: stretch;
+  height: 4rem;
+  @media (max-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.nav-button {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease; 
+  margin-right: 10px;
+  height: 100%; 
+  align-items: center; 
+  @media screen and (max-width: 768px) {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+.nav-button:hover {
+  background-color: rgb(6, 10, 255);
+}
+
+.cat-image-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 4rem;
+  margin-top: 3rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.cat-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+.cat-image-wrapper {
+    position: relative;
+}
+
+
+.cat-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+  .cat-image-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    grid-gap: .5rem;
+  }
+
+  .nav-button {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 1rem;
+  }
+
+  .loading-container{
+    text-align: center;
+  }
+}
+
+.heart-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    color: red;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.heart-icon.filled-heart {
+  opacity: 1;
+}
+
+.cat-image-wrapper:hover .heart-icon {
+  opacity: 1;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  margin-top: 5%;
+
+}
+
+
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid blue;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
